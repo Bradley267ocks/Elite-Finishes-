@@ -5,7 +5,7 @@
     --accent: #FFE66D;
     --light: #F7FFF7;
     --dark: #292F36;
-    --transition: all 0.3s ease;
+    --transition: all 0.4s ease;
 }
 
 * {
@@ -53,7 +53,7 @@ header {
 }
 
 .logo-img {
-    height: 60px;
+    height: 80px;
     width: auto;
     margin-right: 10px;
     display: flex;
