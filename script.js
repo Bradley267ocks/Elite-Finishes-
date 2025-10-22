@@ -48,33 +48,26 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Form submission handling
-const contactForm = document.querySelector('.contact-form form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        
-        // Simple form validation
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const phone = formData.get('phone');
-        const service = formData.get('service');
-        const message = formData.get('message');
-        
-        if (!name || !email || !phone || !service || !message) {
-            alert('Please fill in all required fields.');
-            return;
-        }
-        
-        // Here you would typically send the form data to Formspree
-        // For now, we'll just show a success message
-        alert('Thank you for your message! We will get back to you soon.');
-        this.reset();
-    });
-}
+ // Form submission
+    const contactForm = document.getElementById('washForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your request for ${service} has been received. We'll contact you at ${email} shortly.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
+    
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
